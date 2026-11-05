@@ -1,0 +1,26 @@
+services:
+  mongo:
+    image: mongo:8
+    container_name: todo-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  # The API container. Start everything with: docker compose up --build
+  # For local development you can run only the DB: docker compose up -d mongo
+  api:
+    build: .
+    container_name: todo-api
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      PORT: 4000
+      MONGO_URI: mongodb://mongo:27017/todo
+    ports:
+      - "4000:4000"
+
+volumes:
+  mongo-data:

@@ -1,0 +1,29 @@
+{
+  "name": "todo-graphql-api",
+  "version": "1.0.0",
+  "description": "Todo list API: Node.js + GraphQL (Apollo Server) + MongoDB (Mongoose), containerized with Docker",
+  "main": "dist/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx watch --env-file=.env src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^5.5.1",
+    "graphql": "^16.14.2",
+    "mongoose": "^9.11.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
