@@ -13,4 +13,3 @@ console.log(`MongoDB connected: ${MONGO_URI}`);
 const server = new ApolloServer({ typeDefs, resolvers });
 const { url } = await startStandaloneServer(server, { listen: { port: PORT } });
 console.log(`GraphQL server ready at ${url}`);
-git add .
